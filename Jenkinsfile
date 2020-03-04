@@ -13,10 +13,12 @@ pipeline {
     stages {
         stage('Prepare') {
             steps {
-                echo "stage 1"
-                echo "GIT COMMIT : ${env.GIT_COMMIT}"
-                
-                util.SayHello()
+                script {
+                    echo "stage 1"
+                    echo "GIT COMMIT : ${env.GIT_COMMIT}"
+                    
+                    util.SayHello()
+                }
             }
         }
     }
