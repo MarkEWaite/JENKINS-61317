@@ -16,6 +16,7 @@ pipeline {
                 script {
                     echo "stage 1"
                     echo "GIT COMMIT : ${env.GIT_COMMIT}"
+                    echo "GIT BRANCH : ${env.GIT_BRANCH}"
                     
                     util.SayHello()
                 }
