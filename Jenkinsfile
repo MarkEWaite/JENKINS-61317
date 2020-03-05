@@ -10,7 +10,7 @@ pipeline {
 		timestamps()
 	}
 
-    enviroment {
+    environment {
         env.GIT_COMMIT_MINE = getCommitSha()
     }
 
