@@ -12,7 +12,6 @@ pipeline {
 
     enviroment {
         env.GIT_COMMIT_MINE = getCommitSha()
-}
     }
 
     stages {
