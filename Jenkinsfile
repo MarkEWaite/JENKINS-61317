@@ -11,7 +11,7 @@ pipeline {
 	}
 
     environment {
-        env.GIT_COMMIT_MINE = getCommitSha()
+        def env.GIT_COMMIT_MINE = getCommitSha()
     }
 
     stages {
@@ -31,5 +31,5 @@ pipeline {
 }
 
 def getCommitSha(){
-    return sh(returnStdout: true, script: 'git rev-parse HEAD')
+    return sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
 }
