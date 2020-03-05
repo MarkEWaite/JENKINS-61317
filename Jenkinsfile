@@ -11,7 +11,7 @@ pipeline {
 	}
 
     environment {
-        def env.GIT_COMMIT_MINE = getCommitSha()
+        def GIT_COMMIT_MINE = getCommitSha()
     }
 
     stages {
