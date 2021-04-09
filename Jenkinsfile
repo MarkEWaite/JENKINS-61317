@@ -20,5 +20,23 @@ pipeline {
                 }
             }
         }
+        stage('Use checkout') {
+            steps {
+                dir('a-subdir') {
+                    script {
+                        checkout([$class: 'GitSCM', 
+                                  branches: [[name: '*/master-load-ssh-library']], 
+                                  userRemoteConfigs: [
+                                          [credentialsId: 'MarkEWaite-github-rsa-private-key', 
+                                           url: 'git@github.com:MarkEWaite/JENKINS-61317.git']]])
+                        echo "stage 2"
+                        echo "GIT COMMIT : ${env.GIT_COMMIT}"
+                        echo "GIT BRANCH : ${env.GIT_BRANCH}"
+                    
+                        util.SayHello()
+                    }
+                }
+            }
+        }
     }
 }
