@@ -1,6 +1,9 @@
 #!groovy
 
-library identifier: 'jenlib@jenkins-lib', retriever: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/MarkEWaite/JENKINS-61317', traits: [gitBranchDiscovery()]])
+library identifier: 'jenlib@jenkins-lib',
+        retriever: modernSCM([$class: 'GitSCMSource',
+                              remote: 'https://github.com/MarkEWaite/JENKINS-61317',
+                              traits: [gitBranchDiscovery()]])
 
 pipeline {
     agent any
