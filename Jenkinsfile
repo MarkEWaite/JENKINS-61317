@@ -2,7 +2,7 @@
 
 library identifier: 'jenlib@jenkins-lib', 
         retriever: modernSCM([$class: 'GitSCMSource', 
-                              credentialsId: 'MarkEWaite-github-rsa-private-key-from-mark-pc2', 
+                              credentialsId: 'MarkEWaite-github-rsa-private-key', 
                               remote: 'git@github.com:MarkEWaite/JENKINS-61317.git', 
                               traits: [gitBranchDiscovery()]])
 
