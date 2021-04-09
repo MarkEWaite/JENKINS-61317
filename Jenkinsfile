@@ -1,17 +1,11 @@
 #!groovy
 
-@Library("jenlib@jenkins-lib") _
+library identifier: 'jenlib@jenkins-lib', retriever: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/MarkEWaite/JENKINS-61317', traits: [gitBranchDiscovery()]])
 
 pipeline {
     agent any
-
-    options
-	{
-		timestamps()
-	}
-
     stages {
-        stage('Prepare') {
+        stage('Use default checkout') {
             steps {
                 script {
                     echo "stage 1"
