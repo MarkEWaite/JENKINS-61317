@@ -1,6 +1,10 @@
 #!groovy
 
-library identifier: 'jenlib@jenkins-lib', retriever: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/MarkEWaite/JENKINS-61317', traits: [gitBranchDiscovery()]])
+library identifier: 'jenlib@jenkins-lib', 
+        retriever: modernSCM([$class: 'GitSCMSource', 
+                              credentialsId: 'MarkEWaite-github-rsa-private-key-from-mark-pc2', 
+                              remote: 'git@github.com:MarkEWaite/JENKINS-61317.git', 
+                              traits: [gitBranchDiscovery()]])
 
 pipeline {
     agent any
